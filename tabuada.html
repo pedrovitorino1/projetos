@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TABUADA</title>
+</head>
+<body onload="carregar()"> 
+<style>
+    body{
+        background-color: rgb(151, 188, 50);
+        font: 10pt arial ;}
+    section{
+        ba4ckground-color: white;
+        border-radius: 10pt;
+        padding: 15px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.538); }
+    footer{
+        color: rgb(122, 34, 34);
+        text-align: center;
+        font-style: italic;}
+    h1{
+        color: rgb(157, 224, 215);
+        text-align: center;}
+    div{
+        text-align: center;}
+</style>
+    <head>
+        <h1> TABUADA </h1>
+    </head>
+    <section>
+        <div>
+        <p>numero <input type="number" name="num" id="tx1">
+        <input type="button" value="gerar tabuada" onclick="tabu()"></p>
+        </div>
+        <div>
+           <select name="tabuada" id="seltab" size="10"></select>
+        </div>
+        
+
+    </section>
+    <footer>
+         <p> @pedrosites </p>
+    </footer>
+    <script>
+     function tabu() {
+        var num = document.getElementById ('tx1')
+        var tab = document.getElementById ('seltab')
+     if ( num.value.length == 0 ) {
+        window.alert ('por favor digite um numero')
+     } else {
+        var n = Number(num.value)
+        var c = 1
+        tab.innerHTML=''
+    while (c <= 10){
+        var item = document.createElement ('option')
+        item.text = ` ${n} x ${c} = ${n*c}`
+        tab.appendChild (item)
+        c++
+     }
+     }
+     }
+
+
+    </script>
+</body>
+</html>
